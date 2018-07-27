@@ -5,7 +5,7 @@ layui.define(function (exports) {
         "c_1": {"id": 1, "name": "常用工具"},
         "c_2": {"id": 2, "name": "加密解密"},
         "c_3": {"id": 3, "name": "编码转换"},
-        "c_4": {"id": 4, "name": "其他工具"},
+        "c_4": {"id": 4, "name": "其他工具"}
     };
 
     var tool = {
@@ -61,7 +61,7 @@ layui.define(function (exports) {
             "id": 9,
             "name": "代码格式化",
             "module": "code",
-            "catid": [1,4]
+            "catid": [4]
         },
         "t_10": {
             "id": 10,
@@ -86,6 +86,12 @@ layui.define(function (exports) {
             "name": "随机字符生成器",
             "module": "random_string",
             "catid": [4]
+        },
+        "t_14": {
+            "id": 14,
+            "name": "文本批量处理",
+            "module": "text_batch",
+            "catid": [1, 4]
         }
     };
 

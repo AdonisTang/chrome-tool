@@ -1,0 +1,51 @@
+<div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">内容</label>
+    <div class="layui-input-block">
+        <textarea id="tool_input_content" placeholder="请输入内容" class="layui-textarea">{{ d.getPageData('tool_input_content') }}</textarea>
+    </div>
+</div>
+<div class="layui-form-item">
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 50px">前</label>
+        <div class="layui-input-inline" style="width: 50px">
+            <input type="text" id="tool_input_text_batch_config_left" class="layui-input" value="'">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 50px">后</label>
+        <div class="layui-input-inline" style="width: 50px">
+            <input type="text" id="tool_input_text_batch_config_right" class="layui-input" value="'">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 70px">连接</label>
+        <div class="layui-input-inline" style="width: 50px">
+            <input type="text" id="tool_input_text_batch_config_join" class="layui-input" value=",">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <div class="layui-btn-group">
+            <button type="button" class="layui-btn" id="tool_submit">走起</button>
+        </div>
+    </div>
+</div>
+<div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">结果</label>
+    <div class="layui-input-block">
+        <textarea id="tool_result" class="layui-textarea">{{ d.getPageData('tool_result') }}</textarea>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

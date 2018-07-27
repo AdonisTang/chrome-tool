@@ -32,7 +32,7 @@ layui.define(['laytpl', 'layer', 'jquery', 'element', 'form', 'chromeToolConfig'
             return 'chrome_tool_' + this.getTool(id).module;
         },
         getToolTpl: function (tool_id, callback) {
-            var tpl_path = '/statics/modules/tool_tpl/' + this.getTool(tool_id).module + '.html';
+            var tpl_path = '../statics/modules/tool_tpl/' + this.getTool(tool_id).module + '.html';
             $.get(tpl_path, function (result) {
                 callback(result);
             });
