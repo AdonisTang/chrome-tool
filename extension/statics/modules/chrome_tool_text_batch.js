@@ -52,6 +52,31 @@ layui.define(['chromeTool', 'jquery', 'chromeToolBase', 'code'], function (expor
             return text;
         };
 
+        var compare = function (operation, array1, array2) {
+            //并集
+            if (operation === "1") {
+                return array1.concat(array2.filter(function (v) {
+                    return array1.indexOf(v) === -1;
+                }));
+            }
+
+            // 交集
+            if (operation === "2") {
+                return array1.filter(function (v) {
+                    return array2.indexOf(v) > -1;
+                });
+            }
+
+            // 补集
+            if (operation === "3") {
+                return array1.filter(function (v) {
+                    return array2.indexOf(v) === -1;
+                }).concat(array2.filter(function (v) {
+                    return array1.indexOf(v) === -1;
+                }));
+            }
+        };
+
         tool.loadComplete = function () {
             $("#tool_submit").on('click', function () {
                 var config = {
@@ -81,6 +106,25 @@ layui.define(['chromeTool', 'jquery', 'chromeToolBase', 'code'], function (expor
                 // 复制结果
                 layui.chromeTool.resultAutoCopy(textResult);
             });
+
+            $("#tool_submit_array").on('click', function () {
+                var textArr1 = $("#tool_input_content_array1").val().split('\n');
+                var textArr2 = $("#tool_input_content_array2").val().split('\n');
+
+                var operation = $("#select_operation").val();
+                var array = compare(operation, textArr1, textArr2);
+
+                var textResult = "";
+                $.each(array, function (index, value) {
+                    textResult += value + "\n";
+                });
+
+                $("#tool_result_array").html(textResult);
+
+                // 复制结果
+                layui.chromeTool.resultAutoCopy(textResult);
+            });
+
             layui.code();
         };
         return tool;
