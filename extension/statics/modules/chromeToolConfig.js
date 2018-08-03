@@ -49,13 +49,13 @@ layui.define(function (exports) {
             "id": 7,
             "name": "汉字转拼音",
             "module": "pinyin",
-            "catid": [1,4]
+            "catid": [4]
         },
         "t_8": {
             "id": 8,
             "name": "IP地址查询",
             "module": "ip",
-            "catid": [1,4]
+            "catid": [4]
         },
         "t_9": {
             "id": 9,
@@ -91,6 +91,12 @@ layui.define(function (exports) {
             "id": 14,
             "name": "文本批量处理",
             "module": "text_batch",
+            "catid": [1, 4]
+        },
+        "t_15": {
+            "id": 15,
+            "name": "计算器",
+            "module": "calculator",
             "catid": [1, 4]
         }
     };
