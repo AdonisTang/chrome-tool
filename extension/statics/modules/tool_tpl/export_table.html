@@ -1,42 +1,67 @@
 <div class="layui-form-item">
     <div class="layui-inline">
-        <label class="layui-form-label" style="width: 200px">表格元素选择器</label>
-        <div class="layui-input-inline" style="width: 150px">
-            <input type="text" id="tool_input_table_selector" class="layui-input" placeholder="#xxx|.xxx"
-                   value=".content.itemList">
+        <button class="layui-btn" id="btn_importTabConfig">配置管理</button>
+    </div>
+</div>
+
+<div id="config-tab-box" class="layui-tab" lay-filter="config">
+    <ul class="layui-tab-title">
+    </ul>
+    <div class="layui-tab-content">
+    </div>
+</div>
+
+<div id="config_item_tpl" style="display: none;">
+    <div class="layui-form-item" data-config-box-id="${id}">
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 200px">配置名称</label>
+            <div class="layui-input-inline" style="width: 150px">
+                <input type="text" class="layui-input tool_input_config_name" placeholder="输入配置名称" value="${name}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 200px">表格元素选择器</label>
+            <div class="layui-input-inline" style="width: 150px">
+                <input type="text" class="layui-input tool_input_table_selector" placeholder="#xxx|.xxx"
+                       value="${tableSelector}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 200px">数据行元素选择器</label>
+            <div class="layui-input-inline" style="width: 150px">
+                <input type="text" class="layui-input tool_input_tr_selector" placeholder="#xxx|.xxx"
+                       value="${trSelector}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 200px">单元格元素选择器</label>
+            <div class="layui-input-inline" style="width: 150px">
+                <input type="text" class="layui-input tool_input_td_selector" placeholder="#xxx|.xxx"
+                       value="${tdSelector}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 200px">数据分隔符</label>
+            <div class="layui-input-inline" style="width: 150px">
+                <input type="text" class="layui-input tool_input_td_split" placeholder=",|t" title="制表位Tab用t"
+                       value="${tdSplit}">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width: 200px">保留空格的单元格序号</label>
+            <div class="layui-input-inline" style="width: 150px">
+                <input type="text" class="layui-input tool_input_td_space" title="多个用,隔开" value="${tdSpaceIndex}">
+            </div>
         </div>
     </div>
-    <div class="layui-inline">
-        <label class="layui-form-label" style="width: 200px">数据行元素选择器</label>
-        <div class="layui-input-inline" style="width: 150px">
-            <input type="text" id="tool_input_tr_selector" class="layui-input" placeholder="#xxx|.xxx" value="tr:gt(1)">
-        </div>
-    </div>
-    <div class="layui-inline">
-        <label class="layui-form-label" style="width: 200px">单元格元素选择器</label>
-        <div class="layui-input-inline" style="width: 150px">
-            <input type="text" id="tool_input_td_selector" class="layui-input" placeholder="#xxx|.xxx" value="td:gt(1)">
-        </div>
-    </div>
-    <div class="layui-inline">
-        <label class="layui-form-label" style="width: 200px">数据分隔符</label>
-        <div class="layui-input-inline" style="width: 150px">
-            <input type="text" id="tool_input_td_split" class="layui-input" placeholder=",|t" title="制表位Tab用t"
-                   value="t">
-        </div>
-    </div>
-    <div class="layui-inline">
-        <label class="layui-form-label" style="width: 200px">保留空格的单元格序号</label>
-        <div class="layui-input-inline" style="width: 150px">
-            <input type="text" id="tool_input_td_space" class="layui-input" title="多个用,隔开" value="3">
-        </div>
-    </div>
-    <div class="layui-inline">
-        <div class="layui-btn-group">
-            <button type="button" class="layui-btn" id="tool_submit_export_table">走起</button>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <button type="button" class="layui-btn tool_submit_export_table" data-id="${id}">导出</button>
+            <button type="button" class="layui-btn tool_save_export_table_config" data-id="${id}">保存</button>
         </div>
     </div>
 </div>
+
 
 <div class="layui-form-item layui-form-text">
     <label class="layui-form-label">结果</label>
