@@ -32,30 +32,38 @@ layui.define(['chromeTool', 'jquery', 'chromeToolBase'], function (exports) {
                 return {"tool_input_content": string}
             });
         };
-        tool.getResult = function (data, callback) {
-            data.tool_input_content = $.trim(data.tool_input_content);
-            if (isNaN(data.tool_input_content)) {
-                var time = (Date.parse(new Date(data.tool_input_content))) / 1000;
-                callback(isNaN(time) ? '' : time);
+        tool.getResult = function (timestamp, timeType) {
+            timestamp = $.trim(timestamp);
+            if (isNaN(timestamp)) {
+                var time = (Date.parse(new Date(timestamp))) / timeType;
+                return isNaN(time) ? '' : time;
             }
             else {
                 var newDate = new Date();
-                newDate.setTime(data.tool_input_content * 1000);
-                callback(formatDate(newDate));
+                newDate.setTime(timestamp * timeType);
+                return formatDate(newDate);
             }
         };
         tool.loadComplete = function(){
             $("#" + this.getBlockId() + ' .submit_button').on('click', function () {
                 var data = {
-                    "tool_input_content": $("#tool_input_content").val(),
+                    "tool_input_content": $("#tool_input_content").val()
                 };
-                tool.getResult(data, function (result) {
-                    $("#tool_result").val(result);
-                    // 复制结果
-                    layui.chromeTool.resultAutoCopy(result);
-                    data.tool_result = result;
-                    tool.pageData().set(data);
-                })
+
+                var timeType = $("#select_time_type").val();
+
+                var result = "";
+
+                var timesArr = data.tool_input_content.split('\n');
+                $.each(timesArr, function (index, value) {
+                    result += tool.getResult(value, timeType * 1) + "\n";
+                });
+
+                $("#tool_result").val(result);
+                // 复制结果
+                layui.chromeTool.resultAutoCopy(result);
+                data.tool_result = result;
+                tool.pageData().set(data);
             });
             $("#" + this.getBlockId() + ' .current_time').on('click', function () {
                 $("#tool_input_content").val(formatDate(new Date()));

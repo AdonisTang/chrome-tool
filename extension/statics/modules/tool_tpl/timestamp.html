@@ -5,8 +5,16 @@
     </div>
 </div>
 <div class="layui-form-item">
-    <button class="layui-btn submit_button">转换</button>
-    <button class="layui-btn current_time">当前时间</button>
+    <div class="layui-inline">
+        <select id="select_time_type" name="timeType" lay-verify="">
+            <option value="1000">秒</option>
+            <option value="1" selected>毫秒</option>
+        </select>
+    </div>
+    <div class="layui-inline">
+        <button class="layui-btn submit_button">转换</button>
+        <button class="layui-btn current_time">当前时间</button>
+    </div>
 </div>
 <div class="layui-form-item layui-form-text">
     <label class="layui-form-label">结果</label>
