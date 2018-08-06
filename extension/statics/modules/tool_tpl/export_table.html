@@ -1,0 +1,60 @@
+<div class="layui-form-item">
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 200px">表格元素选择器</label>
+        <div class="layui-input-inline" style="width: 150px">
+            <input type="text" id="tool_input_table_selector" class="layui-input" placeholder="#xxx|.xxx"
+                   value=".content.itemList">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 200px">数据行元素选择器</label>
+        <div class="layui-input-inline" style="width: 150px">
+            <input type="text" id="tool_input_tr_selector" class="layui-input" placeholder="#xxx|.xxx" value="tr:gt(1)">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 200px">单元格元素选择器</label>
+        <div class="layui-input-inline" style="width: 150px">
+            <input type="text" id="tool_input_td_selector" class="layui-input" placeholder="#xxx|.xxx" value="td:gt(1)">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 200px">数据分隔符</label>
+        <div class="layui-input-inline" style="width: 150px">
+            <input type="text" id="tool_input_td_split" class="layui-input" placeholder=",|t" title="制表位Tab用t"
+                   value="t">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width: 200px">保留空格的单元格序号</label>
+        <div class="layui-input-inline" style="width: 150px">
+            <input type="text" id="tool_input_td_space" class="layui-input" title="多个用,隔开" value="3">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <div class="layui-btn-group">
+            <button type="button" class="layui-btn" id="tool_submit_export_table">走起</button>
+        </div>
+    </div>
+</div>
+
+<div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">结果</label>
+    <div class="layui-input-block">
+        <textarea id="tool_result" class="layui-textarea">{{ d.getPageData('tool_result') }}</textarea>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

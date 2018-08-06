@@ -33,5 +33,17 @@
         "https://*/*",
         "<all_urls>"
     ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "statics/inject/chromejquip.min.js",
+        "statics/inject/inject.js"
+      ]
+    }
+  ],
     "update_url": "http://clients2.google.com/service/update2/crx"
 }

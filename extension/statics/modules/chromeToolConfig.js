@@ -98,6 +98,12 @@ layui.define(function (exports) {
             "name": "计算器",
             "module": "calculator",
             "catid": [1, 4]
+        },
+        "t_16": {
+            "id": 16,
+            "name": "表格导出",
+            "module": "export_table",
+            "catid": [1, 4]
         }
     };
 
