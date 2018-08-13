@@ -17,12 +17,12 @@
     "tdSplit": "t",
     "trSelector": "tr:gt(1)"
   },
-  "kibana_auth": {
-    "id": "kibana_auth",
-    "name": "ES身份认证",
+  "kibana_export": {
+    "id": "kibana_export",
+    "name": "ES数据导出",
     "tableSelector": ".doc-table-container table",
     "tdSelector": "td:gt(0)",
-    "tdSpaceIndex": "",
+    "tdSpaceIndex": "1,2",
     "tdSplit": "t",
     "trSelector": "tr.discover-table-row"
   }
