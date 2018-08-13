@@ -96,9 +96,9 @@ layui.define(['chromeTool', 'jquery', 'chromeToolBase', 'code'], function (expor
 
                 textBatch(textArr, batch, config);
 
-                var textResult = "";
+                var textResult = "", joneChar = $("#tool_input_text_batch_config_rn").get(0).checked ? "\n" : "";
                 $.each(textArr, function (index, value) {
-                    textResult += value + "\n";
+                    textResult += value + joneChar;
                 });
 
                 $("#tool_result").html(textResult);
