@@ -19,19 +19,19 @@ layui.define(function (exports) {
             "id": 2,
             "name": "加密/解密",
             "module": "encrypt",
-            "catid": [1,2]
+            "catid": [2]
         },
         "t_3": {
             "id": 3,
             "name": "BASE64编码",
             "module": "base64",
-            "catid": [1,2]
+            "catid": [2]
         },
         "t_4": {
             "id": 4,
             "name": "URL编码",
             "module": "url",
-            "catid": [1,3]
+            "catid": [3]
         },
         "t_5": {
             "id": 5,
@@ -103,6 +103,18 @@ layui.define(function (exports) {
             "id": 16,
             "name": "表格导出",
             "module": "export_table",
+            "catid": [1, 4]
+        },
+        "t_17": {
+            "id": 17,
+            "name": "大小写转换",
+            "module": "char_upper_lower_case",
+            "catid": [1, 4]
+        },
+        "t_18": {
+            "id": 18,
+            "name": "请求参数转换",
+            "module": "query_string",
             "catid": [1, 4]
         }
     };
