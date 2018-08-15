@@ -108,12 +108,22 @@ layui.define(['laytpl', 'layer', 'jquery', 'element', 'form', 'chromeToolConfig'
             textarea.remove();
         },
         clipboardPaste: function (callback) {
+            var clipboardBox = $("#clipboard_text");
+
             var textarea = $('<textarea></textarea>');
-            $("#clipboard_text").html(textarea);
+            clipboardBox.html(textarea);
+
             textarea[0].select();
             document.execCommand('paste');
             var string = $.trim(textarea.val());
             textarea.remove();
+
+            //这里string可能包含特殊字符，所以先text()，再html()实现转义
+            clipboardBox.text(string);
+            string = clipboardBox.html();
+
+            clipboardBox.html("");
+
             if (string) {
                 callback && callback(string);
             }
